@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "title": "sixhabit w",
+      "details": "sixbla blaw ",
+      "id": 1,
+      "complete": true
+    },
+    {
+      "id": 2,
+      "title": "performance ppl",
+      "details": "bla bla ",
+      "complete": false
+    },
+    {
+      "title": "test",
+      "details": "tt",
+      "complete": false,
+      "id": 178
+    }
+  ]
+}
