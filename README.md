@@ -1,6 +1,7 @@
 # project-planner
 
-This template should help get you started developing with Vue 3 in Vite.
+this Template  is build from the tutorial of Shaun from the Net nindja coding channel 
+https://github.com/iamshaunjp/Vue-3-Firebase/tree/lesson-69/project-planner
 
 ## Recommended IDE Setup
 
