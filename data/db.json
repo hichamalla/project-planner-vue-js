@@ -1,22 +1,40 @@
 {
   "projects": [
     {
-      "title": "sixhabit w",
-      "details": "sixbla blaw ",
+      "title": "sixhabitx",
+      "details": "sixbla bla",
       "id": 1,
-      "complete": true
+      "complete": false,
+      "deleted": true,
+      "idw": 10000
     },
     {
       "id": 2,
       "title": "performance ppl",
       "details": "bla bla ",
-      "complete": false
+      "complete": true,
+      "deleted": false
     },
     {
       "title": "test",
       "details": "tt",
       "complete": false,
-      "id": 178
+      "id": 178,
+      "deleted": false
+    },
+    {
+      "title": "saven sikay",
+      "titles": "the fantom world",
+      "complete": false,
+      "id": 179,
+      "deleted": true
+    },
+    {
+      "title": "test",
+      "details": "ko",
+      "complete": false,
+      "id": 180,
+      "deleted": true
     }
   ]
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="project" :class="{complete :project.complete}">
+  <div class="project" :class="{complete :project.complete,deleted:project.deleted}">
     <!-- <h1>Hiiiii</h1> -->
 
     <div class="actions">
@@ -7,14 +7,16 @@
         {{project.title}}
       </h3>
       <div class="icons">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" @click="toggleDelete">
           delete
         </span>
+        <RouterLink :to="{name:'EditProject',params:{id:project.id}}">
         <span class="material-symbols-outlined">
           edit
         </span>
+      </RouterLink> 
         <span class="material-symbols-outlined" @click="toggleDone">
-          done
+          {{project.complete==true?"done":"radio_button_checked"}}
         </span>
       </div>
     </div>
@@ -40,16 +42,36 @@ export default {
     toggleDone() {
       // console.log(this.uri);
       // this.project.complete=!this.project.complete 
-      axios.patch(this.uri,{ complete: !this.project.complete 
-        // headers: { 'Content-Type': 'application/json' },
-      },)
-        .then(()=>{
+      axios.patch(this.uri,
+        {
+          complete: !this.project.complete
+        }
+        ,)
+        .then(() => {
           console.log('done'),
-          this.$emit('complete', this.project.id)})
+            this.$emit('complete', this.project.id)
+        })
         // .then(response => console.log(response.data))
-
         .catch(err => {
-          console.log('err'),
+          console.log('errCompleted'),
+            console.log(err)
+        })
+    },
+    toggleDelete() {
+      // console.log(this.uri);
+      // this.project.complete=!this.project.complete 
+      axios.patch(this.uri,
+        {
+          deleted: true
+        }
+        ,)
+        .then(() => {
+          console.log('deleted'),
+            this.$emit('deleted', this.project.id)
+        })
+        // .then(response => console.log(response.data))
+        .catch(err => {
+          console.log('errDelete'),
             console.log(err)
         })
     }
